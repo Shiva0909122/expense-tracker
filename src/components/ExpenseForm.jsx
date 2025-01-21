@@ -39,7 +39,7 @@ function ExpenseForm({ onAddExpense }) {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="amount">Amount ($)</label>
+        <label htmlFor="amount">Amount (₹)</label>
         <input
           type="number"
           id="amount"

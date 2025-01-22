@@ -11,14 +11,14 @@ function ExpenseSummary({ expenses }) {
       <h2>Summary</h2>
       <div className="total-expense">
         <h3>Total Expenses</h3>
-        <span className="amount">${totalExpenses.toFixed(2)}</span>
+        <span className="amount">₹{totalExpenses.toFixed(2)}</span>
       </div>
       <div className="category-breakdown">
         <h3>Category Breakdown</h3>
         {Object.entries(categoryTotals).map(([category, amount]) => (
           <div key={category} className="category-item">
             <span className="category">{category}</span>
-            <span className="amount">${amount.toFixed(2)}</span>
+            <span className="amount">₹{amount.toFixed(2)}</span>
           </div>
         ))}
       </div>

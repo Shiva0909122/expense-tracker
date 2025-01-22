@@ -11,7 +11,7 @@ function ExpenseItem({ expense, onDelete }) {
         </div>
       </div>
       <div className="expense-item__amount">
-        <span>${amount.toFixed(2)}</span>
+        <span>₹{amount.toFixed(2)}</span>
         <button onClick={() => onDelete(id)} className="delete-btn">
           Delete
         </button>

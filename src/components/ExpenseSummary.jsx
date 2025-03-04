@@ -1,27 +1,50 @@
+import { useState } from "react";
+
 function ExpenseSummary({ expenses }) {
-  const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-  
-  const categoryTotals = expenses.reduce((acc, expense) => {
-    acc[expense.category] = (acc[expense.category] || 0) + expense.amount;
+  const [budgets, setBudgets] = useState({
+    food: 200,
+    transportation: 100,
+    utilities: 150,
+    entertainment: 100,
+    other: 50,
+  });
+
+  const handleBudgetChange = (category, value) => {
+    setBudgets((prev) => ({ ...prev, [category]: Number(value) }));
+  };
+
+  const categoryTotals = expenses.reduce((acc, exp) => {
+    acc[exp.category] = (acc[exp.category] || 0) + exp.amount;
     return acc;
   }, {});
 
   return (
     <div className="expense-summary">
-      <h2>Summary</h2>
-      <div className="total-expense">
-        <h3>Total Expenses</h3>
-        <span className="amount">${totalExpenses.toFixed(2)}</span>
-      </div>
-      <div className="category-breakdown">
-        <h3>Category Breakdown</h3>
-        {Object.entries(categoryTotals).map(([category, amount]) => (
-          <div key={category} className="category-item">
-            <span className="category">{category}</span>
-            <span className="amount">${amount.toFixed(2)}</span>
+      <h2>Expense Summary</h2>
+      <BudgetTracker expenses={expenses} />
+      {Object.keys(budgets).map((category) => (
+        <div key={category} className="budget-item">
+          <label>{category.toUpperCase()}</label>
+          <input
+            type="number"
+            value={budgets[category]}
+            onChange={(e) => handleBudgetChange(category, e.target.value)}
+          />
+          <div className="progress-bar">
+            <div
+              className="progress"
+              style={{
+                width: `${(categoryTotals[category] || 0) / budgets[category] * 100}%`,
+                backgroundColor:
+                  (categoryTotals[category] || 0) > budgets[category] ? "red" : "green",
+              }}
+            ></div>
           </div>
-        ))}
-      </div>
+          <p>
+            Spent: ${categoryTotals[category] || 0} / Budget: ${budgets[category]}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }

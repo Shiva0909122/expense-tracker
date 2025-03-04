@@ -67,11 +67,21 @@ function ExpenseForm({ onAddExpense }) {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="food">Food</option>
-          <option value="transportation">Transportation</option>
-          <option value="utilities">Utilities</option>
-          <option value="entertainment">Entertainment</option>
-          <option value="other">Other</option>
+         <option value="food">🍽️ Food</option>
+          <option value="transportation">🚗 Transportation</option>
+          <option value="utilities">💡 Utilities</option>
+          <option value="entertainment">🎭 Entertainment</option>
+          <option value="housing">🏠 Housing</option>
+          <option value="healthcare">⚕️ Healthcare</option>
+          <option value="education">📚 Education</option>
+          <option value="shopping">🛍️ Shopping</option>
+          <option value="travel">✈️ Travel</option>
+          <option value="subscriptions">📺 Subscriptions</option>
+          <option value="gifts">🎁 Gifts</option>
+          <option value="insurance">🛡️ Insurance</option>
+          <option value="investments">📈 Investments</option>
+          <option value="charity">❤️ Charity</option>
+          <option value="miscellaneous">🔹 Miscellaneous</option>
         </select>
       </div>
       <button type="submit">Add Expense</button>

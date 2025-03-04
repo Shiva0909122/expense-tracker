@@ -11,11 +11,6 @@
   padding: 2rem;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 header h1 {
   color: #2c3e50;
 }
@@ -75,13 +70,7 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.expense-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-}
+
 
 .expense-item:last-child {
   border-bottom: none;
@@ -156,4 +145,148 @@ button:hover {
   .app {
     padding: 1rem;
   }
+}
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.expense-item:hover {
+  transform: scale(1.02);
+}
+
+.delete-btn {
+  background: #ff5f5f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #e63946;
+}
+
+.monthly-statement {
+  background: var(--card-bg);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.monthly-statement h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+.username-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.username-form input {
+  padding: 8px;
+  border: 2px solid #8884d8;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+.export-data {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.export-data h2 {
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.username {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  gap: 20px;
+}
+
+.btn-csv {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-csv:hover {
+  background: #219150;
+}
+
+.btn-pdf {
+  background: #c0392b;
+  color: white;
+}
+
+.btn-pdf:hover {
+  background: #a93226;
 }
